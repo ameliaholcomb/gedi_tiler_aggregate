@@ -1,0 +1,17 @@
+[project]
+name = "gtagg"
+version = "0.1.0"
+description = "GEDI-H3 style aggregation, rasterization and raster sampling on the tiled GEDI database, run on MAAP DPS"
+requires-python = ">=3.12"
+# Install with environment.yml: rasterio must come from conda-forge.
+dependencies = []
+
+[project.scripts]
+gtagg = "gtagg.cli:main"
+
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["gtagg*"]

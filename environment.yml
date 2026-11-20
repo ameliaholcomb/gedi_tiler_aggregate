@@ -1,0 +1,26 @@
+name: gtagg
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - duckdb=1.5.5
+  - libgdal-arrow-parquet
+  - pandas
+  - geopandas
+  - shapely
+  - pyproj
+  - rasterio  # from conda-forge: the pip wheel's GDAL/PROJ clash with DuckDB's
+  - h3-py>=4.2
+  - numpy
+  - pyarrow
+  - python-dateutil
+  - boto3
+  - fsspec
+  - s3fs>=2025.1
+  - pytest
+  - ipykernel
+  - matplotlib
+  - pip:
+      - maap-py==4.2.0
+      - gedi-tiler @ git+https://github.com/ameliaholcomb/gedi_tiler.git
