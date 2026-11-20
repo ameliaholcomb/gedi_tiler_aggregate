@@ -45,7 +45,8 @@ def _shot_args(p):
                    help="compute the unfinished partitions as this many DPS jobs")
     d.add_argument("--batch", help="DPS batch name [gt_<dataset name>]; each submission "
                    "appends a generation number")
-    d.add_argument("--algo_version", default="main", help="DPS algorithm version [main]")
+    d.add_argument("--algo_version", default="deploy-Od52t9Ax",
+                   help="registered DPS algorithm version [%(default)s]")
     d.add_argument("--queue", default="maap-dps-worker-8gb", help="DPS queue")
 
 

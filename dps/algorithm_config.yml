@@ -1,5 +1,5 @@
 algorithm_name: gedi-tiler-aggregate
-algorithm_version: main
+algorithm_version: deploy-Od52t9Ax
 algorithm_description: >-
   Compute a share of the partitions of a gt_aggregate / gt_from_img dataset (GEDI-H3 style
   aggregation or raster sampling over the tiled GEDI database).

@@ -139,7 +139,8 @@ dataset, a batch tag and a job index; each submission's split is saved to
 `<dataset>/_jobs/<tag>.json`. The build installs `environment.yml`, this
 package, and DuckDB's h3 extension. Datasets for DPS must be on S3. Register
 a new version with MAAP's algorithm registration (e.g. `commit_and_run.py
-dps/algorithm_config.yml`), then pass it as `--algo_version`.
+dps/algorithm_config.yml`), then make it the default `--algo_version` in
+`gtagg/cli.py` (currently `deploy-Od52t9Ax`).
 
 ## Tests
 

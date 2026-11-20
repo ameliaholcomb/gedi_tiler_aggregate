@@ -28,7 +28,7 @@ def _generation(dataset, batch):
     return max([int(g) for g in gens if g.isdigit()], default=0) + 1
 
 
-def submit(dataset, todo, n_jobs, batch=None, algo_version="main",
+def submit(dataset, todo, n_jobs, batch, algo_version,
            queue="maap-dps-worker-8gb", burst=50, pause=180):
     from maap.maap import MAAP
 
