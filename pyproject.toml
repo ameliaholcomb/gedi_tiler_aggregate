@@ -7,7 +7,11 @@ requires-python = ">=3.12"
 dependencies = []
 
 [project.scripts]
-gtagg = "gtagg.cli:main"
+gt_aggregate = "gtagg.cli:gt_aggregate"
+gt_from_img = "gtagg.cli:gt_from_img"
+gt_rasterize = "gtagg.cli:gt_rasterize"
+gt_merge = "gtagg.cli:gt_merge"
+gt_run = "gtagg.cli:gt_run"
 
 [build-system]
 requires = ["setuptools>=64", "wheel"]

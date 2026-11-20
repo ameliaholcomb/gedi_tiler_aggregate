@@ -110,7 +110,7 @@ def mosaic(paths, out, compress):
 def rasterize(dataset, output, columns=None, merge=False, compress="LZW"):
     spec = store.read_json(store.join(dataset, "_spec.json"))
     if spec["tool"] != "aggregate":
-        raise SystemExit("rasterize needs a dataset made by `gtagg aggregate`")
+        raise SystemExit("gt_rasterize needs a dataset made by gt_aggregate")
     plan = store.read_json(store.join(dataset, "_plan.json"))
     grid = grids.make_grid(spec["grid"], spec["level"])
     missing = set(plan) - store.done_partitions(dataset)

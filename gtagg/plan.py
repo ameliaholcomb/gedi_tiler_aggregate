@@ -38,7 +38,7 @@ def plan_partitions(grid, tile_ids):
     return {pid: sorted(tiles) for pid, tiles in sorted(plan.items())}
 
 
-def make_plan(con, spec, region_gdf=None):
+def make_plan(spec, region_gdf=None):
     """Write the spec, plan and region of a new dataset, or check that an
     existing one was planned with the same spec. Returns the plan."""
     out = spec["output"]
@@ -52,7 +52,9 @@ def make_plan(con, spec, region_gdf=None):
         print(f"Resuming the dataset in {out}")
         return store.read_json(store.join(out, "_plan.json"))
 
+    con = store.connect(spec["database"])
     tiles = database_tiles(con)
+    con.close()
     if region_gdf is not None:
         tiles &= set(ducky.covering_tile_ids(region_gdf))
     grid = grids.make_grid(spec["grid"], spec["level"])

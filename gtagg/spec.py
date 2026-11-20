@@ -82,9 +82,8 @@ def where_sql(spec, columns):
     if spec["time_start"]:
         conds.append(f"absolute_time >= TIMESTAMPTZ '{spec['time_start']} 00:00:00+00'")
     if spec["time_end"]:
-        # The whole end day. (GEDI-H3 stops at its first instant.)
-        conds.append(f"absolute_time < TIMESTAMPTZ '{spec['time_end']} 00:00:00+00' "
-                     "+ INTERVAL 1 DAY")
+        # As GEDI-H3: up to the first instant of the end date.
+        conds.append(f"absolute_time <= TIMESTAMPTZ '{spec['time_end']} 00:00:00+00'")
     if spec["query"]:
         conds.append(f"({spec['query']})")
     return conds

@@ -1,7 +1,7 @@
 algorithm_name: gedi-tiler-aggregate
 algorithm_version: main
 algorithm_description: >-
-  Compute a share of the partitions of a gtagg dataset (GEDI-H3 style
+  Compute a share of the partitions of a gt_aggregate / gt_from_img dataset (GEDI-H3 style
   aggregation or raster sampling over the tiled GEDI database).
 repository_url: https://github.com/ameliaholcomb/gedi_tiler_aggregate.git
 docker_container_url: mas.maap-project.org/root/maap-workspaces/custom_images/maap_base:v5.0.0
@@ -14,12 +14,12 @@ inputs:
   file: []
   positional:
   - name: dataset
-    description: Dataset directory on S3, planned by gtagg aggregate or gtagg from_img
+    description: Dataset directory on S3, planned by gt_aggregate or gt_from_img
     required: true
     default: ''
     test_value: s3://maap-ops-workspace/shared/ameliah/gtagg-test/dps_test
   - name: tag
-    description: Tag of the submission; its partitions are in <dataset>/_jobs/<tag>.json
+    description: The submission's batch tag; its partitions are in <dataset>/_jobs/<tag>.json
     required: true
     default: ''
     test_value: test

@@ -118,9 +118,10 @@ def run(dataset, partitions=None, threads=None):
     grid = grids.make_grid(spec["grid"], spec["level"])
     done = store.done_partitions(dataset)
     todo = [p for p in (partitions or plan) if p not in done]
-    print(f"{len(todo)} partitions to compute", flush=True)
     if not todo:
+        print("All partitions are finished.")
         return
+    print(f"{len(todo)} partitions to compute", flush=True)
 
     con = store.connect(spec["database"], threads=threads)
     columns = {r[0] for r in con.sql("DESCRIBE gedi_dl.data").fetchall()}
