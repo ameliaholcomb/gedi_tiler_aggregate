@@ -76,6 +76,11 @@ computes one partition at a time, reading only that partition's 1–6 database
 tiles, in a few GB. Choose N for wall time. `--plan_only` prints the
 partition count before anything runs.
 
+For scale: CONUS mean RH98 at 2 km (EGI level 7, quality filtered) is 414
+partitions over 941 tiles and 1.2 billion shots. As 20 jobs on the 8 GB
+queue (about 2 minutes per partition), it finished in 46 minutes;
+`gt_rasterize --merge` then took 2 minutes.
+
 ## Options
 
 - **Variables (`-l`)** are database columns or `name=SQL`, e.g.
